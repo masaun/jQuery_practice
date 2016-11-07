@@ -25,28 +25,12 @@
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
-    $(function() {
-      $('p').css('color', 'red').hide('slow');
-    });
-
-    // セレクタ.メソッド
-    // $("")
-    // html要素 p h1 ulなど
-    // id要素 #mainなど、シャープをセレクタの前につける
-    // class .itemなど、ドットをセレクタの前につける
     $(function(){
-      $("#sub").css('color', 'red');
-    });
+      //０から始まる。特定のセレクタを指定したい時。id=subの２段目のliを青字にしたい場合
+      // $("#sub > li:eq(2)").css('color', 'blue');
 
-    
-    // id=main直下のclassだけにメソッドを効かせたい場合、不等号記号を使う。
-    $(function(){
-      $("#main > .item").css('color', 'green');
-    });
-
-    //複数の要素を変えたい場合は、カンマで区切る。
-    $(function(){
-      $("p, .item").css('color', 'blue');
+      // １以上の要素を指定したい場合
+      $("#sub > li:gt(1)").css('color', 'blue');
     });
   </script>
 </body>
