@@ -26,11 +26,8 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
     $(function(){
-      //０から始まる。特定のセレクタを指定したい時。id=subの２段目のliを青字にしたい場合
-      // $("#sub > li:eq(2)").css('color', 'blue');
-
-      // １以上の要素を指定したい場合
-      $("#sub > li:gt(1)").css('color', 'blue');
+      // 指定した要素以外の、範囲内にある要素すべてにメソッドを適用する
+      $("#sub > li:eq(2)").siblings().css('color', 'red')
     });
   </script>
 </body>
