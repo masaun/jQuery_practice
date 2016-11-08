@@ -8,26 +8,21 @@
 
 <body>
   <p>jQueryの練習</p>
-  <ul id="main">
-    <li>0</li>
-    <li class="item">1</li>
-    <li class="item">2</li>
-      3
-      <ul id="sub">
-        <li>3-0</li>
-        <li>3-1</li>
-        <li class="item">3-2</li>
-        <li class="item">3-3</li>
-        <li>3-4</li>
-      </ul>
-    </li>
-  </ul>
+  <p><a href="http://google.com">Google</a></p>
+  <p><a href="http://yahoo.co.jp">Yahoo!</a></p>
+  <p><a href="http://dotinstall.com">Dotinstall</a></p>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
     $(function(){
-      // 指定した要素以外の、範囲内にある要素すべてにメソッドを適用する
-      $("#sub > li:eq(2)").siblings().css('color', 'red')
+      // 属性セレクタ。指定したリンクのみにメソッドを適用したい場合
+      // $('a[href="http://google.com"]').css('background', 'red');
+
+      // 属性セレクタ。指定したリンク以外にメソッドを適用したい場合
+      // $('a[href!="http://google.com"]').css('background', 'red');
+
+      // 指定した文字列を含む要素にメソッドを適用したい場合（ここではjpを含む要素）
+      $('a[href$="jp"]').css('background', 'red');
     });
   </script>
 </body>
