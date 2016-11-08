@@ -4,30 +4,22 @@
 <head>
   <meta charset="ja">
   <title>jQueryの練習</title>
-  <style>
-    .myStyle {
-      border: 5px solid green;
-      font-size: 48px;
-    }
-  </style>
 </head>
 
 <body>
   <p>jQueryの練習</p>
+  <a href="http://google.com" data-sitename="google">Google</a>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
     $(function(){
-      
-      // コンソール上で指定した要素のcssを主翼できる
-      // $('p').css('color', 'red').css('background', 'blue')
-      // console.log($('p').css('color'));
-      // 結果：rgb(255, 0, 0)
 
-      // 事前に宣言したclassを適用したい場合
-      $('p').addClass('myStyle')
+      // attrメソッドで値を取得
+      // console.log($('a').attr('href'));
+      // $('a').attr('href', 'http://google.co.jp')
 
-
+      // 事前にdataを宣言しておけば、ここでdataの要素を取得できる
+      console.log($('a').data('sitename'));
     });
   </script>
 </body>
