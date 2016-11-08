@@ -8,18 +8,21 @@
 
 <body>
   <p>jQueryの練習</p>
-  <a href="http://google.com" data-sitename="google">Google</a>
+  <ul>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+  </ul>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
     $(function(){
 
-      // attrメソッドで値を取得
-      // console.log($('a').attr('href'));
-      // $('a').attr('href', 'http://google.co.jp')
+      // 要素を動的に追加していくためのメソッド：beforeやafter
 
-      // 事前にdataを宣言しておけば、ここでdataの要素を取得できる
-      console.log($('a').data('sitename'));
+      var li = $('<li>').text('just added')
+      $('ul > li:eq(1)').before(li);
+
     });
   </script>
 </body>
