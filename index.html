@@ -4,25 +4,30 @@
 <head>
   <meta charset="ja">
   <title>jQueryの練習</title>
+  <style>
+    .myStyle {
+      border: 5px solid green;
+      font-size: 48px;
+    }
+  </style>
 </head>
 
 <body>
   <p>jQueryの練習</p>
-  <p><a href="http://google.com">Google</a></p>
-  <p><a href="http://yahoo.co.jp">Yahoo!</a></p>
-  <p><a href="http://dotinstall.com">Dotinstall</a></p>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
     $(function(){
-      // 属性セレクタ。指定したリンクのみにメソッドを適用したい場合
-      // $('a[href="http://google.com"]').css('background', 'red');
+      
+      // コンソール上で指定した要素のcssを主翼できる
+      // $('p').css('color', 'red').css('background', 'blue')
+      // console.log($('p').css('color'));
+      // 結果：rgb(255, 0, 0)
 
-      // 属性セレクタ。指定したリンク以外にメソッドを適用したい場合
-      // $('a[href!="http://google.com"]').css('background', 'red');
+      // 事前に宣言したclassを適用したい場合
+      $('p').addClass('myStyle')
 
-      // 指定した文字列を含む要素にメソッドを適用したい場合（ここではjpを含む要素）
-      $('a[href$="jp"]').css('background', 'red');
+
     });
   </script>
 </body>
