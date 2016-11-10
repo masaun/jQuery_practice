@@ -14,24 +14,20 @@
   <script>
     $(function(){
 
-      // メソッドhideで隠す。slowでスピードを遅く。
-      $('#box').hide('slow');
-
-      // 数字を指定すると、秒単位でスピードを調整できる。
-      $('#box').hide('800');
-
-      // fadeOUtメソッドでフェードアウト
-      $('#box').fadeOut('800');
-
-      // toggleメソッドで、消えてる時はあ表示・表示されてる時は非表示を
-      $('#box').toggle('800');
-
-      // フェードアウトさせた後、アラートのポップアップを表示する
-      $('#box').fadeOut('800', function() { 
-        alert("gone!");
+      // マウスオーバー&マウスアウトさせると色が変わる
+      $('#box').click('800', function() {
+        alert("hi!");
       });
-
-
+      $('#box')
+        .mouseover(function() {
+          $(this).css('background', 'green');
+        })
+        .mouseout(function() {
+          $(this).css('background', 'red');
+        })
+        .mouseout(function(e) {
+          $(this).text(e.pageX);
+        });
     });
   </script>
 </body>
