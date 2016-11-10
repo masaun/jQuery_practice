@@ -8,20 +8,29 @@
 
 <body>
   <p>jQueryの練習</p>
-  <ul>
-    <li>0</li>
-    <li>1</li>
-    <li>2</li>
-  </ul>
+  <div id="box" style="width: 100px; height: 100px; background: red;"></div>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
     $(function(){
 
-      // 要素を動的に追加していくためのメソッド：beforeやafter
+      // メソッドhideで隠す。slowでスピードを遅く。
+      $('#box').hide('slow');
 
-      var li = $('<li>').text('just added')
-      $('ul > li:eq(1)').before(li);
+      // 数字を指定すると、秒単位でスピードを調整できる。
+      $('#box').hide('800');
+
+      // fadeOUtメソッドでフェードアウト
+      $('#box').fadeOut('800');
+
+      // toggleメソッドで、消えてる時はあ表示・表示されてる時は非表示を
+      $('#box').toggle('800');
+
+      // フェードアウトさせた後、アラートのポップアップを表示する
+      $('#box').fadeOut('800', function() { 
+        alert("gone!");
+      });
+
 
     });
   </script>
