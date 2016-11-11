@@ -8,26 +8,31 @@
 
 <body>
   <p>jQueryの練習</p>
-  <div id="box" style="width: 100px; height: 100px; background: red;"></div>
+  
+  <input type="text" id="name">
+  <select id="members" name="members">
+    <option>田中</option>
+    <option>鈴木</option>
+    <option>佐藤</option>
+  </select>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
     $(function(){
 
-      // マウスオーバー&マウスアウトさせると色が変わる
-      $('#box').click('800', function() {
-        alert("hi!");
-      });
-      $('#box')
-        .mouseover(function() {
-          $(this).css('background', 'green');
+      $('#name')
+        .focus(function() {
+          $('this').css('background', 'blue');
         })
-        .mouseout(function() {
-          $(this).css('background', 'red');
-        })
-        .mouseout(function(e) {
-          $(this).text(e.pageX);
+        .blur(function() {
+           $('this').css('background', 'white');
         });
+
+      // 設定が変わる際にアラートポップアップを指すchangeメソッド
+      $('#members').change(function() {
+        alert('アラート！')
+      });
+
     });
   </script>
 </body>
