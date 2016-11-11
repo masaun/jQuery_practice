@@ -8,29 +8,19 @@
 
 <body>
   <p>jQueryの練習</p>
-  
-  <input type="text" id="name">
-  <select id="members" name="members">
-    <option>田中</option>
-    <option>鈴木</option>
-    <option>佐藤</option>
-  </select>
+  <button>ボタン</button>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
     $(function(){
 
-      $('#name')
-        .focus(function() {
-          $('this').css('background', 'blue');
-        })
-        .blur(function() {
-           $('this').css('background', 'white');
-        });
+      $('button').click(function() {
+        var p = $('<p>').text('追加ボタン').addClass('adds')
+        $(this).before(p);
+      });
 
-      // 設定が変わる際にアラートポップアップを指すchangeメソッド
-      $('#members').change(function() {
-        alert('アラート！')
+      $('body').on('click', '.adds', function() {
+        $(this).remove();
       });
 
     });
