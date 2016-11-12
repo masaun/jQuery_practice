@@ -19,6 +19,7 @@
         $(this).before(p);
       });
 
+      // 直前に動的に生成された要素に対して、メソッドを適用させるにはonメソッドを使う
       $('body').on('click', '.adds', function() {
         $(this).remove();
       });
